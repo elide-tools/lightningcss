@@ -175,7 +175,7 @@ fn derive_enum(data: &DataEnum, ident: &Ident, opts: &CssOptions) -> TokenStream
 }
 
 pub struct CssOptions {
-  pub case: convert_case::Case,
+  pub case: convert_case::Case<'static>,
 }
 
 impl CssOptions {
