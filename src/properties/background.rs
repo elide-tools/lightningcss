@@ -663,14 +663,14 @@ impl<'i> Shorthand<'i> for SmallVec<[Background<'i>; 1]> {
     {
       let length = length.unwrap();
       let values = izip!(
-        images.unwrap().drain(..),
-        x_positions.unwrap().drain(..),
-        y_positions.unwrap().drain(..),
-        repeats.unwrap().drain(..),
-        sizes.unwrap().drain(..),
-        attachments.unwrap().drain(..),
-        origins.unwrap().drain(..),
-        clips.unwrap().drain(..),
+        images.unwrap().into_iter(),
+        x_positions.unwrap().into_iter(),
+        y_positions.unwrap().into_iter(),
+        repeats.unwrap().into_iter(),
+        sizes.unwrap().into_iter(),
+        attachments.unwrap().into_iter(),
+        origins.unwrap().into_iter(),
+        clips.unwrap().into_iter(),
       )
       .enumerate()
       .map(

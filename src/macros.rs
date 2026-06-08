@@ -663,7 +663,7 @@ macro_rules! define_list_shorthand {
         if $($key.is_some() &&)+ true {
           let values = izip!(
             $(
-              $key.unwrap().drain(..),
+              $key.unwrap().into_iter(),
             )+
           ).map(|($($key,)+)| {
             $name {
